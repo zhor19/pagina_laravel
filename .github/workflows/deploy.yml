@@ -1,0 +1,18 @@
+name: deploy
+ 
+on:
+workflow_dispatch:
+
+jobs:
+deploy:
+name: Deploy to VPS
+runs-on: ubuntu-22.04
+steps:
+- name: Deploy
+uses: appleboy/ssh-action@v0.1.8
+with:
+host: 187.33.155.58
+port: 22
+username: oscar
+key: ${{secrets.PRIVATE_KEY}}
+script: "cd /var/www/html/pagina_laravel; git pull origin main; npm run build"
