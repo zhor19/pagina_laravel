@@ -12,7 +12,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: 187.33.155.58
-          port: 22222
+          port: 2222
           username: oscar
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
